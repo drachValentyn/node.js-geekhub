@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        input[type="button"] {
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            margin: 2px;
+        }
+
+        .calc-block {
+            border: 1px solid;
+            margin: 25px auto;
+            padding: 15px;
+            width: 230px;
+            border-radius: 5px;
+        }
+
+        #result {
+            width: 220px;
+            font-size: 25px;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<div class="calc-block">
+
+    <table class="back">
+        <tr class="readonly">
+            <input type="text" readonly id="result">
+        </tr>
+
+        <tr>
+            <td><input type="button" class="button one" value="√" onclick="sqrt()"></td>
+            <td><input type="button" class="button one" value="x²" onclick='sqrt_rt()'></td>
+            <td><input type="button" class="button one" value="CE" onclick='ce()'></td>
+            <td><input type="button" class="button one" value="C" onclick='c("")'></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" class="button two" value="7" onclick='number("7")'></td>
+            <td><input type="button" class="button two" value="8" onclick='number("8")'></td>
+            <td><input type="button" class="button two" value="9" onclick='number("9")'></td>
+            <td><input type="button" class="button one" value="+" onclick='number("+")'></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" class="button two" value="4" onclick='number("4")'></td>
+            <td><input type="button" class="button two" value="5" onclick='number("5")'></td>
+            <td><input type="button" class="button two" value="6" onclick='number("6")'></td>
+            <td><input type="button" class="button one" value="-" onclick='number("-")'></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" class="button two" value="1" onclick='number("1")'></td>
+            <td><input type="button" class="button two" value="2" onclick='number("2")'></td>
+            <td><input type="button" class="button two" value="3" onclick='number("3")'></td>
+            <td><input type="button" class="button one" value="*" onclick='number("*")'></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" class="button two" value="0" onclick='number("0")'></td>
+            <td><input type="button" class="button one" value="." onclick='number(".")'></td>
+            <td><input type="button" class="button two" value="=" onclick='summ()'></td>
+            <td><input type="button" class="button one" value="/" onclick='number("/")'></td>
+        </tr>
+
+    </table>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
