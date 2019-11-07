@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Telephone</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        button {
+            width: 68px;
+            height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            margin: 2px;
+            background-color: unset;
+        }
+        .calc-block {
+            border: 1px solid;
+            margin: 25px auto;
+            padding: 15px;
+            width: 230px;
+            border-radius: 5px;
+        }
+        #result {
+            width: 220px;
+            font-size: 25px;
+        }
+        ​
+    </style>
+</head>
+<body>
+​
+​
+<div class="calc-block">
+    ​
+    <table class="back">
+        <tr class="readonly">
+            <input type="text" readonly id="result">
+        </tr>
+        ​
+        <tr>
+            <td><button data-number="1" data-text=".,?!'&quot;1-()@/:_"> 1 <small>o_o</small></button></td>
+            <td><button data-number="2" data-text="abc2"> 2 <small>abc</small></button></td>
+            <td><button data-number="3" data-text="def3"> 3 <small>def</small></button></td>
+        </tr>
+        ​
+        <tr>
+            <td><button data-number="4" data-text="ghi4"> 4 <small>ghi</small></button></td>
+            <td><button data-number="5" data-text="jkl5"> 5 <small>jkl</small></button></td>
+            <td><button data-number="6" data-text="mno6"> 6 <small>mno</small></button></td>
+        </tr>
+        ​
+        <tr>
+            <td><button data-number="7" data-text="pqrs7"> 7 <small>pqrs</small></button></td>
+            <td><button data-number="8"  data-text="tuv8"> 8 <small>tuv</small></button></td>
+            <td><button data-number="9" data-text="wxyz9"> 9 <small>wxyz</small></button></td>
+        </tr>
+        <tr >
+            <td><button data-text=" 0" data-number="0">0 <small>__</small></button></td>
+            <td><button data-text="#">#</button></td>
+            ​
+        </tr>
+        ​
+    </table>
+    ​
+</div>
+​
+<script src="script.js"></script>
+​
+</body>
+</html>
