@@ -3,20 +3,20 @@ function number(val) {
 }
 
 function sqrt() {
-    let sqrt_val = document.getElementById("result").value;
-    document.getElementById("result").value = Math.sqrt(sqrt_val);
+    let sqrtValue = document.getElementById("result").value;
+    document.getElementById("result").value = Math.sqrt(sqrtValue);
 }
 
-function sqrt_rt() {
-    let sqrt_rt_val = document.getElementById("result").value;
-    document.getElementById("result").value = Math.pow(sqrt_rt_val, 2);
+function sqrtPow() {
+    let sqrtPowValue = document.getElementById("result").value;
+    document.getElementById("result").value = Math.pow(sqrtPowValue, 2);
 }
 
-function c(val) {
+function reset(val) {
     document.getElementById("result").value = val;
 }
 
-function ce() {
+function resetOne() {
 
     let string = document.getElementById("result").value;
     let output = string.toString();
@@ -28,16 +28,21 @@ function ce() {
 
 }
 
+function notEval(str) {
+    return Function(`'use strict'; return (${str})`)()
+}
+
+
 function summ() {
-    c(eval(document.getElementById("result").value))
+    reset(notEval(document.getElementById("result").value))
 }
 
 document.addEventListener('keydown', function (event) {
     const key = event.key;
     if (key === "Delete") {
-        c("")
+        reset("")
     } else if (key === "Backspace") {
-        ce()
+        resetOne()
     }
 });
 

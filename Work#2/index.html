@@ -13,15 +13,45 @@
 
     //Task #1 --- Find in array: sum, min and max, replace min and max - create custom functions
     let arrNum = [1, 2, 9, 4, 5, 8];
+    let list = [2,5,1,null,-10, -Infinity, '1111']
+
+    function arrayMin(arr) {
+        let len = arr.length, min = Infinity;
+        while (len--) {
+            if (arr[len] < min) {
+                min = arr[len];
+            }
+        }
+        return min;
+    }
+
+    function arrayMax(arr) {
+        let len = arr.length, max = -Infinity;
+        while (len--) {
+            if (arr[len] > max) {
+                max = arr[len];
+            }
+        }
+        return max;
+    }
 
     function arifmArr(arr) {
 
-        let reducer = (accumulator, currentValue) => accumulator + currentValue;
 
-        let summ = arr.reduce(reducer);
+        function fold(reducer, init, xs){
+            let acc = init;
+            for (const x of xs) {
+                acc = reducer(acc, Number(x));
+            }
+            return acc;
+        }
 
-        let min = Math.min.apply(null, arr);
-        let max = Math.max.apply(null, arr);
+        const reducer = xs => fold((acc, x) => acc + x, 0, xs);
+
+        let summ = reducer(arr);
+
+        let min = arrayMin(arr);
+        let max = arrayMax(arr);
 
         let indexMin = arr.indexOf(min);
         let indexMax = arr.indexOf(max);
@@ -40,7 +70,7 @@
         return final;
     }
 
-    arifmArr(arrNum);
+    arifmArr(list);
 
 
     //Task #2 --- Create function which will return function with callback in arguments
@@ -51,7 +81,7 @@
         }
     }
 
-    funcCall( "hello", "goodbye");
+    //funcCall( "hello", "goodbye");
 
 
     //Task #3 --- Create a function that will replace all number dividing three with ‘foo’, dividing seven with ‘bar’ and dividing three and seven with ‘foobar’. Function with n params.
@@ -63,10 +93,10 @@
         for (let i = 1; i <= length; i++) {
             output = '';
             if (i % fooNum === 0) {
-                output += 'Fizz';
+                output += 'Foo';
             }
             if (i % barNum === 0) {
-                output += 'Buzz';
+                output += 'Bar';
             }
             if (i % fooNum !== 0 && i % barNum !== 0) {
                 output += i;
@@ -75,7 +105,7 @@
         }
     }
 
-    fooBar(100,7,3)
+    //fooBar(100,7,3)
 
 
     //Task #4 --- Create function with 2 string params. It must check if letters in the first correspond to the number of matches in second and return %.
@@ -89,19 +119,23 @@
         let counter = 0;
 
         for (let i = 0; i < minLength; i++) {
-            if (str1[i] === str2[i]) {
+
+            let str = str2.toLowerCase();
+            let char = str1[i].toLowerCase();
+            let n = str.indexOf(char, -1);
+
+            if (n !== -1) {
                 counter++;
             }
         }
 
         let result = Math.round((counter / maxLength) * 100) + "%";
-        print(result);
 
         return result;
 
     }
+    print("adda = awd - " + twoStrings("adda","awd"));
 
-    twoStrings("Lorem Ipsum","Lorem ipsum");
 
 
 </script>
