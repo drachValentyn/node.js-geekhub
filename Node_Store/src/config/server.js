@@ -2,7 +2,7 @@ const express = require('express');
 const Vue = require('vue');
 const server = express();
 const renderer = require('vue-server-renderer').createRenderer();
-
+const db = require('./db');
 
 server.get('/admin', (req, res) => {
 
@@ -11,7 +11,7 @@ server.get('/admin', (req, res) => {
             url: req.url,
             message: 'Hello Vue Admin Panel',
         },
-        template: require('fs').readFileSync('../admin/index.html', 'utf-8')
+        template: require('fs').readFileSync('./admin/index.html', 'utf-8')
     });
 
     renderer.renderToString(app, (err, html) => {
@@ -26,6 +26,8 @@ server.get('/admin', (req, res) => {
 server.listen(8080,  () => {
     console.log('Express server start on port 8080');
 });
+
+
 
 
 // app.listen(process.env.PORT || config.port, () => {

@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "mongoose": "^5.8.0",
     "vue": "^2.6.10",
     "vue-server-renderer": "^2.6.10"
   },
